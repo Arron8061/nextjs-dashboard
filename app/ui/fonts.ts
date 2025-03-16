@@ -1,8 +1,27 @@
-import { Inter, Lusitana } from "next/font/google";
+import localFont from "next/font/local";
 
-export const inter = Inter({ subsets: ["latin"] });
+// 配置 Inter 字体
+export const inter = localFont({
+  src: "../../public/fonts/Inter-VariableFont_opsz,wght.ttf",
+  variable: "--font-inter",
+  preload: false,
+});
 
-export const lusitana = Lusitana({
-  weight: ["400", "700"],
-  subsets: ["latin"],
+/**
+ * 配置 Lusitana 字体
+ */
+export const lusitana = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Lusitana-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Lusitana-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-lusitana",
 });
