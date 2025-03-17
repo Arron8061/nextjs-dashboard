@@ -24,6 +24,7 @@ export async function createInvoice(formData: FormData) {
   });
   const amountInCents = amount * 100;
   const date = new Date().toISOString().split("T")[0];
+  console.log(customerId, amountInCents, status, date);
 
   await sql`
     INSERT INTO invoices (customer_id, amount, status, date)
